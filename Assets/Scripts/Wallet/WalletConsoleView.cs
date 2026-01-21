@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class WalletConsoleView : MonoBehaviour, IDisplayer
 {
-    [SerializeField] private SourceCreator _sourceCreator;
+    private Wallet _wallet;
 
-    public void Start()
+    public void Initialize(Wallet wallet)
     {
-        _sourceCreator.GameWallet.CurrencyValueChanged += OnCurrencyValueChanged;
+        _wallet = wallet;
+        _wallet.CurrencyValueChanged += OnCurrencyValueChanged;
     }
 
     public void OnCurrencyValueChanged(CurrencyType type, int value)
     {
-        foreach (KeyValuePair<CurrencyType, int> item in _sourceCreator.GameWallet.ValueOfCurrency)
+        foreach (KeyValuePair<CurrencyType, int> item in _wallet.ValuesOfCurrencies)
         {
             Debug.Log(item.Key + " - " + item.Value);
         }
@@ -20,6 +21,6 @@ public class WalletConsoleView : MonoBehaviour, IDisplayer
 
     private void OnDestroy()
     {
-        _sourceCreator.GameWallet.CurrencyValueChanged -= OnCurrencyValueChanged;
+        _wallet.CurrencyValueChanged -= OnCurrencyValueChanged;
     }
 }

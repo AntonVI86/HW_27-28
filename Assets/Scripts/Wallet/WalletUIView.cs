@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class WalletUIView : MonoBehaviour, IDisplayer
 {
-    [SerializeField] private SourceCreator _sourceCreator;
-
     [SerializeField] private CurrencyView _currencyViewPrefab;
     [SerializeField] private Sprite[] _icon;
 
+    private Wallet _wallet;
+
     private List<CurrencyView> _currencyViews = new List<CurrencyView>();
 
-    private void Start()
+    public void Initialize(Wallet wallet)
     {
+        _wallet = wallet;
         CreateView();
-        _sourceCreator.GameWallet.CurrencyValueChanged += OnCurrencyValueChanged;
+        _wallet.CurrencyValueChanged += OnCurrencyValueChanged;
     }
 
     public void OnCurrencyValueChanged(CurrencyType type, int value)
@@ -30,7 +31,7 @@ public class WalletUIView : MonoBehaviour, IDisplayer
         int index = 0;
         CurrencyType type = 0;
 
-        foreach (KeyValuePair<CurrencyType, int> item in _sourceCreator.GameWallet.ValueOfCurrency)
+        foreach (KeyValuePair<CurrencyType, int> item in _wallet.ValuesOfCurrencies)
         {
             CurrencyView view = Instantiate(_currencyViewPrefab, transform);
             view.Initialize(type,_icon[index], item.Value);
@@ -43,6 +44,6 @@ public class WalletUIView : MonoBehaviour, IDisplayer
 
     private void OnDestroy()
     {
-        _sourceCreator.GameWallet.CurrencyValueChanged -= OnCurrencyValueChanged;
+        _wallet.CurrencyValueChanged -= OnCurrencyValueChanged;
     }
 }

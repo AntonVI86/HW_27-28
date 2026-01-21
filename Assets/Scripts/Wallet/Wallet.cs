@@ -4,40 +4,56 @@ using UnityEngine;
 
 public class Wallet
 {
-    public event Action<CurrencyType, int> CurrencyValueChanged; 
+    public event Action<CurrencyType, int> CurrencyValueChanged;
 
-    private Dictionary<CurrencyType, int> _valueOfCurrency = new Dictionary<CurrencyType, int>()
+    private Dictionary<CurrencyType, int> _valuesOfCurrencies = new Dictionary<CurrencyType, int>();
+
+    public Wallet(int coinValue, int diamondValue, int foodValue)
     {
-        {CurrencyType.Coin, 0 },
-        {CurrencyType.Diamond, 0 },
-        {CurrencyType.Food, 0 }
-    };
+        _valuesOfCurrencies[CurrencyType.Coin] = coinValue;
+        _valuesOfCurrencies[CurrencyType.Diamond] = diamondValue;
+        _valuesOfCurrencies[CurrencyType.Food] = foodValue;
+    }
 
-    public Dictionary<CurrencyType, int> ValueOfCurrency => _valueOfCurrency;
+    public Dictionary<CurrencyType, int> ValuesOfCurrencies => _valuesOfCurrencies;
 
-    public int GetValue(CurrencyType type) => _valueOfCurrency[type];
+    public int GetValue(CurrencyType type) => _valuesOfCurrencies[type];
+
     public void AddValue(CurrencyType type, int receivedValue)
     {
         if (receivedValue <= 0)
             return;
 
-        int currentValue = _valueOfCurrency[type];
+        int currentValue = _valuesOfCurrencies[type];
         int result = currentValue + receivedValue;
 
-        _valueOfCurrency[type] = result;
+        _valuesOfCurrencies[type] = result;
         CurrencyValueChanged?.Invoke(type, result);
     }
 
     public void SubtractValue(CurrencyType type, int receivedValue)
     {
-        int currentValue = _valueOfCurrency[type];
+        int currentValue = _valuesOfCurrencies[type];
 
-        if (receivedValue > currentValue)
+        if (receivedValue <= 0)
             return;
 
-        int result = currentValue - receivedValue;
+        if(IsEnoughCurrencyValue(type, receivedValue))
+        {
+            int result = currentValue - receivedValue;
 
-        _valueOfCurrency[type] = result;
-        CurrencyValueChanged?.Invoke(type, result);
+            _valuesOfCurrencies[type] = result;
+            CurrencyValueChanged?.Invoke(type, result);
+        }
+    }
+
+    private bool IsEnoughCurrencyValue(CurrencyType type, int receivedValue)
+    {
+        int currentValue = _valuesOfCurrencies[type];
+
+        if (receivedValue <= currentValue)
+            return true;
+
+        return false;
     }
 }
