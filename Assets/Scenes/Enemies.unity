@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 558920372}
   - component: {fileID: 558920371}
   - component: {fileID: 558920370}
-  - component: {fileID: 558920369}
+  - component: {fileID: 558920373}
   m_Layer: 5
   m_Name: Button_2
   m_TagString: Untagged
@@ -543,22 +543,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &558920369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558920367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0d52c1bd33f3a499676f3414fa8bef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _container: {fileID: 1039124634}
-  _enemyPrefab: {fileID: 5216453346451340075, guid: 406693b7e9bb5b643b6c1dab27ebb3dc,
-    type: 3}
-  _deathType: 1
 --- !u!114 &558920370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +586,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 558920371}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 558920373}
+        m_TargetAssemblyTypeName: Enemies.EnemyCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &558920371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,6 +637,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558920367}
   m_CullTransparentMesh: 1
+--- !u!114 &558920373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558920367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0d52c1bd33f3a499676f3414fa8bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _container: {fileID: 1039124634}
+  _enemyPrefab: {fileID: 5216453346451340075, guid: 406693b7e9bb5b643b6c1dab27ebb3dc,
+    type: 3}
+  _type: 1
 --- !u!1 &611125996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1143,7 @@ GameObject:
   - component: {fileID: 948470576}
   - component: {fileID: 948470575}
   - component: {fileID: 948470574}
-  - component: {fileID: 948470573}
+  - component: {fileID: 948470577}
   m_Layer: 5
   m_Name: Button_3
   m_TagString: Untagged
@@ -1159,22 +1171,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &948470573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948470571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0d52c1bd33f3a499676f3414fa8bef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _container: {fileID: 1039124634}
-  _enemyPrefab: {fileID: 8279051519375973133, guid: 3ec361393528aee43ba4251ed5de25f6,
-    type: 3}
-  _deathType: 2
 --- !u!114 &948470574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,7 +1214,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 948470575}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 948470577}
+        m_TargetAssemblyTypeName: Enemies.EnemyCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &948470575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,6 +1265,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948470571}
   m_CullTransparentMesh: 1
+--- !u!114 &948470577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948470571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0d52c1bd33f3a499676f3414fa8bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _container: {fileID: 1039124634}
+  _enemyPrefab: {fileID: 8279051519375973133, guid: 3ec361393528aee43ba4251ed5de25f6,
+    type: 3}
+  _type: 2
 --- !u!1 &973567565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,8 +1424,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039124634}
-  - component: {fileID: 1039124637}
-  - component: {fileID: 1039124636}
   - component: {fileID: 1039124635}
   m_Layer: 0
   m_Name: Service
@@ -1434,40 +1456,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1039124633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 912abe1eb436e0a42ae9fcd7f010dc1f, type: 3}
+  m_Script: {fileID: 11500000, guid: acea7ff1ea249564eaf0594d95579cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _service: {fileID: 1039124637}
---- !u!114 &1039124636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039124633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145bc24914ba940488f56df7eb9dbea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _service: {fileID: 1039124637}
-  _enemyCount: {fileID: 925159211}
---- !u!114 &1039124637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039124633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac3351847a4bf0488cd4b39612311bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyCreator:
+  _enemyCreators:
   - {fileID: 1373251673}
-  - {fileID: 558920369}
-  - {fileID: 948470573}
+  - {fileID: 558920373}
+  - {fileID: 948470577}
 --- !u!1 &1185886458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1721,7 +1716,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1373251671}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373251673}
+        m_TargetAssemblyTypeName: Enemies.EnemyCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1373251671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1775,7 +1782,7 @@ MonoBehaviour:
   _container: {fileID: 1039124634}
   _enemyPrefab: {fileID: 285286402247554567, guid: 2b1eb9e6e7d940a42a3ad758e83d50d3,
     type: 3}
-  _deathType: 0
+  _type: 0
 --- !u!1 &1409752005
 GameObject:
   m_ObjectHideFlags: 0

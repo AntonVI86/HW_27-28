@@ -1,31 +1,15 @@
-using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Enemies
 {
-    private float _lifeTime = 3f;
-
-    private DeathTypes _deathType;
-
-    [SerializeField] private bool _isDeath = false;
-
-    public DeathTypes Type => _deathType;
-    public bool IsDeath => _isDeath;
-    public float LifeTime => _lifeTime;
-
-    private void Start()
+    public class Enemy : MonoBehaviour
     {
-        StartCoroutine(CountDown());
-    }
+        [SerializeField] private bool _isDied;
 
-    public void SetType(DeathTypes type) => _deathType = type;
+        private DeathType _type;
+        public bool IsDied => _isDied;
+        public DeathType Type => _type;
 
-    private IEnumerator CountDown()
-    {
-        while(_lifeTime > 0)
-        {
-            _lifeTime -= Time.deltaTime;
-            yield return null;
-        }
+        public void SetType(DeathType type) => _type = type;
     }
 }
