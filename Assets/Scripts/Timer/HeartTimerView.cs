@@ -5,18 +5,25 @@ using UnityEngine.UI;
 
 public class HeartTimerView : TimerView
 {
-    [SerializeField] private Image _heart;
-    [SerializeField] private TMP_Text _timeVisual;
+    private Timer _timer;
 
     private List<Image> _hearts = new List<Image>();
 
-    public override void Initialization()
+    [SerializeField] private Image _heart;
+    [SerializeField] private TMP_Text _timeVisual;
+
+    public override void Initialize(Timer timer)
     {
-        for (int i = 0; i < Timer.CurrentTime; i++)
+        _timer = timer;
+
+        for (int i = 0; i < _timer.CurrentValue; i++)
         {
             Image newHeart = Instantiate(_heart, transform);
             _hearts.Add(newHeart);
         }
+
+        _timer.ValueChanged += OnValueChanged;
+        _timer.Reseted += OnReseted;
     }
 
     public override void OnReseted()
@@ -35,5 +42,11 @@ public class HeartTimerView : TimerView
         {
             _hearts[Mathf.CeilToInt(value)].gameObject.SetActive(false);
         }   
+    }
+
+    public void OnDestroy()
+    {
+        _timer.ValueChanged -= OnValueChanged;
+        _timer.Reseted -= OnReseted;
     }
 }

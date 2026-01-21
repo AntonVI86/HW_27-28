@@ -4,9 +4,9 @@ namespace Enemies
 {
     public class Example : MonoBehaviour
     {
-        [SerializeField] private EnemyCreator[] _enemyCreators;
-
         private EnemyRegistrationService _service;
+
+        [SerializeField] private EnemyCreator[] _enemyCreators;
 
         private void Awake()
         {

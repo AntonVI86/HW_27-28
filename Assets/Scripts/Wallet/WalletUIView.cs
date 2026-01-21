@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class WalletUIView : MonoBehaviour, IDisplayer
 {
-    [SerializeField] private CurrencyView _currencyViewPrefab;
-    [SerializeField] private Sprite[] _icon;
-
     private Wallet _wallet;
 
     private List<CurrencyView> _currencyViews = new List<CurrencyView>();
+
+    [SerializeField] private CurrencyView _currencyViewPrefab;
+    [SerializeField] private Sprite[] _icon;
 
     public void Initialize(Wallet wallet)
     {

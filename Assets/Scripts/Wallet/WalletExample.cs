@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class WalletExample : MonoBehaviour
 {
-    [SerializeField] private WalletUIView _walletUIView;
-    [SerializeField] private WalletConsoleView _walletConsoleView;
-
     private Wallet _wallet;
 
     private int _minValue = 1;
     private int _maxValue = 5;
+
+    [SerializeField] private WalletUIView _walletUIView;
+    [SerializeField] private WalletConsoleView _walletConsoleView;
 
     private void Awake()
     {

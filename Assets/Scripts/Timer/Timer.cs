@@ -8,15 +8,17 @@ public class Timer
     public event Action Reseted;
 
     private MonoBehaviour _behaviour;
-    private float _defaultValue = 10;
+
     private float _currentValue;
+    private float _defaultValue;
 
     private Coroutine _coroutine;
 
     public float CurrentValue => _currentValue;
 
-    public Timer(MonoBehaviour behaviour)
+    public Timer(MonoBehaviour behaviour, float value)
     {
+        _defaultValue = value;
         _currentValue = _defaultValue;
         _behaviour = behaviour;
     }
@@ -27,9 +29,14 @@ public class Timer
             Stop();
 
         _coroutine = _behaviour.StartCoroutine(Process());
-    } 
+    }
 
-    public void Stop() => _behaviour.StopCoroutine(_coroutine);
+    public void Stop()
+    {
+        if (_coroutine != null)
+            _behaviour.StopCoroutine(_coroutine);
+    }
+
     public void Reset()
     {
         _currentValue = _defaultValue;

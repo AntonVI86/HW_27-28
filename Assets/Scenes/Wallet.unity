@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fccb7ea4fd74044eae8a1df63396042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sourceCreator: {fileID: 784184714}
 --- !u!4 &51468903
 Transform:
   m_ObjectHideFlags: 0
@@ -498,58 +497,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d93b5dd63a4af41a531a246b46a48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sourceCreator: {fileID: 784184714}
   _currencyViewPrefab: {fileID: 6640592790283995465, guid: 55194685269c9af40849fab6c34b18b1,
     type: 3}
   _icon:
   - {fileID: 21300000, guid: fc9d7ac77b80e424d9c6d2890f9af52b, type: 3}
   - {fileID: 21300000, guid: 96df5282e804a6f488e4b55e33dbbef2, type: 3}
   - {fileID: 21300000, guid: 76caf5e4ca559764484493b1342b0952, type: 3}
---- !u!1 &554010072
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 554010074}
-  - component: {fileID: 554010073}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &554010073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554010072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e2b2b1de20df1c4e84b7abc7def8a98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sourceCreator: {fileID: 784184714}
---- !u!4 &554010074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554010072}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 359.4488, y: 422.6683, z: -65.6821}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784184711
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,9 +544,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 784184711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8b1a4ce398493443a03eb286311e44b, type: 3}
+  m_Script: {fileID: 11500000, guid: 356d86b2cb281e84292bc8f9d2f4af22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _walletUIView: {fileID: 430286106}
+  _walletConsoleView: {fileID: 51468902}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,5 +778,4 @@ SceneRoots:
   - {fileID: 784184713}
   - {fileID: 2120444291}
   - {fileID: 2089054117}
-  - {fileID: 554010074}
   - {fileID: 51468903}

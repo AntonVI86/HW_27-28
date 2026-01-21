@@ -2,7 +2,7 @@
 - Project name: HW_27-28
 - Unity version: Unity 2022.3.16f1
 - Active game object:
-  - Name: ConsoleDisplayer
+  - Name: HeartPanel
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
